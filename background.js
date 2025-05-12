@@ -88,15 +88,16 @@ function processCapture(tab, selectionText) {
 
     // Encode URL, title, and selection text
     const encodedUrl = encodeURIComponent(pageUrl);
-    const encodedTitle = escapeIt(pageTitle);
 
     let orgProtocolUrl;
     const trimmedSelection = selectionText.trim();
 
+    // TODO: support template=<template(e.g., p)>
     if (trimmedSelection) {
-        const encodedSelection = escapeIt(trimmedSelection);
-        orgProtocolUrl = `org-protocol://capture?template=p&url=${encodedUrl}&title=${encodedTitle}&body=${encodedSelection}`;
+        const encodedTitle = escapeIt(trimmedSelection+" - "+pageTitle);
+        orgProtocolUrl = `org-protocol://capture?url=${encodedUrl}&title=${encodedTitle}`;
     } else {
+        const encodedTitle = escapeIt(pageTitle);
         orgProtocolUrl = `org-protocol://capture?url=${encodedUrl}&title=${encodedTitle}`;
     }
 

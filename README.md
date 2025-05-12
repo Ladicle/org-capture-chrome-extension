@@ -11,7 +11,7 @@ This extension was inspired by and builds upon the concepts of [sprig/org-captur
 * **Capture Full Page:** Captures the URL and title of the current web page.
     * Invokes: `org-protocol://capture?url=<URL>&title=<Page Title>`
 * **Capture Selected Text:** Captures the URL, title of the current web page, and the currently selected text.
-    * Invokes: `org-protocol://capture?template=p&url=<URL>&title=<Page Title>&body=<Selected Text>`
+    * Invokes: `org-protocol://capture?url=<URL>&title=<Selected Text - Page Title>`
 * **Context Menu Integration:** Access capture functionality via the right-click context menu.
     * "Capture selection to Org" (appears when text is selected)
     * "Capture page to Org"
